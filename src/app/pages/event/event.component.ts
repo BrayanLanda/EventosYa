@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SidebarComponent } from "../../layout/sidebar/sidebar.component";
+import { Event } from '../../models/event';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'app-event',
@@ -8,6 +10,20 @@ import { SidebarComponent } from "../../layout/sidebar/sidebar.component";
   templateUrl: './event.component.html',
   styleUrl: './event.component.css'
 })
-export class EventComponent {
+export class EventComponent implements OnInit{
+    events: Event[] = [];
 
+    constructor(private eventService: EventService) {}
+
+    ngOnInit(): void {
+      this.eventService.getEvents().subscribe(
+        (data) => {
+          this.events = data;
+          console.log(data);
+        },
+        (error) => {
+          console.error('Error fetching events', error);
+        }
+      )
+    }
 }
