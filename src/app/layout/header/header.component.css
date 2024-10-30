@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 60px 20px;
+  color: #ffffff;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+}
+
+.search-bar .form-control {
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  border-radius: 8px;
+}
+
+/* Botones de autenticación */
+.auth-buttons .btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+/* Separación entre los botones */
+.auth-buttons .btn:last-child {
+  margin-right: 0;
+}
+

@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+/* Estilo del navbar */
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  margin-right: 20px;
+  font-size: 1.1rem;
+}
+
+.navbar {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.home-container {
+  background-image: url('https://i.pinimg.com/originals/ee/77/7c/ee777c9bf6652a4cb9028d31278c6676.jpg'); /* Cambia esta URL */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
