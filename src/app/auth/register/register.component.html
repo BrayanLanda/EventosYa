@@ -2,8 +2,8 @@
   <app-nav>
   </app-nav>
   <div class="register-container">
-    <h2>Register</h2>
-    <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <h2 class="text-center">Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
       <!-- Nombre -->
       <div class="form-group">
         <label for="name">Name</label>
