@@ -1,5 +1,87 @@
 <div class="home-container">
   <app-nav>
   </app-nav>
-  <h1>Register</h1>
+  <div class="register-container">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <!-- Nombre -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': registerForm.get('name')?.invalid && registerForm.get('name')?.touched }"
+        />
+        <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="invalid-feedback">
+          Name is required.
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched }"
+        />
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="invalid-feedback">
+          Valid email is required.
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched }"
+        />
+        <div *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched" class="invalid-feedback">
+          Password is required.
+        </div>
+        <div *ngIf="registerForm.get('password')?.errors?.['minlength'] && registerForm.get('password')?.touched" class="invalid-feedback">
+          Password must be at least 8 characters long.
+        </div>
+        <div *ngIf="registerForm.get('password')?.errors?.['maxlength'] && registerForm.get('password')?.touched" class="invalid-feedback">
+          Password cannot be longer than 15 characters.
+        </div>
+      </div>
+
+      <!-- Password Confirmation -->
+      <div class="form-group">
+        <label for="password_confirmation">Confirm Password</label>
+        <input
+          id="password_confirmation"
+          type="password"
+          formControlName="password_confirmation"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': registerForm.get('password_confirmation')?.invalid && registerForm.get('password_confirmation')?.touched }"
+        />
+        <div *ngIf="registerForm.get('password_confirmation')?.errors?.['isMatching'] && registerForm.get('passwordConfirmation')?.touched" class="invalid-feedback">
+          Passwords do not match.
+        </div>
+      </div>
+
+      <!-- Validation Errors from Backend -->
+      <div *ngIf="validationErrors" class="alert alert-danger mt-3">
+        <ul>
+          <li *ngFor="let error of validationErrors">{{ error }}</li>
+        </ul>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+        Register
+      </button>
+    </form>
+  </div>
+
 </div>
