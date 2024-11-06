@@ -1,11 +1,16 @@
 <div class="d-flex">
   <app-sidebar></app-sidebar>
-  <div class="p-4">
-    <h1>Dashboard</h1>
+
+
+  <div class="content p-4">
+
+
     <div class="row g-4 mb-4"><!--Start Cards-->
-      <div class="col-xl-6 col-md-12"><!--Start Card Event -->
+
+
+      <div class="col-xl-3 col-md-6"><!--Start Card Event -->
         <div class="card bg-gradient-primary text-white h-100 shadow-sm rounded">
-          <div class="card-body d-flex">
+          <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h6 class="card-title mb-2">Eventos</h6>
@@ -23,7 +28,7 @@
           </div>
         </div>
       </div> <!--Start Card Event -->
-       <div class="col-xl-6 col-md-12"><!-- Start Card Booking -->
+       <div class="col-xl-6 col-md-6"><!-- Start Card Booking -->
         <div class="card bg-gradient-success text-white h-100 shadow-sm rounded">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
@@ -44,5 +49,34 @@
         </div>
       </div><!-- End Card Booking-->
     </div><!--End cards-->
+
+     <!-- Charts Row -->
+     <div class="row g-4 mb-4">
+      <!-- Area Chart -->
+      <div class="col-xl-6">
+        <div class="card">
+          <div class="card-header">
+            <i class="bi bi-graph-up me-1"></i>
+            Area Chart Example
+          </div>
+          <div class="card-body">
+            <canvas id="areaChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bar Chart -->
+      <div class="col-xl-6">
+        <div class="card">
+          <div class="card-header">
+            <i class="bi bi-lightning-charge-fill me-1"></i>
+            Energy Consumption
+          </div>
+          <div class="card-body">
+            <canvas id="barChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
